@@ -1,0 +1,18 @@
+@import 'src/assets/styles/main.scss';
+
+.img-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message
+{
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+    color: var(--page-font-100);
+}

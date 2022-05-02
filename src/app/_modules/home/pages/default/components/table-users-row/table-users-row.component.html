@@ -1,0 +1,32 @@
+<div class="container-row">
+    <div class="container-item">{{ user.name || '-' }}</div>
+    <div class="container-item">{{ user.login || '-' }}</div>
+    <div class="container-item">{{ user.followers || 0 }}</div>
+    <div class="container-item">{{ user.following || 0 }}</div>
+    <div class="container-item">{{ user.location || '-' }}</div>
+    <div class="container-item actions">
+        
+        <!-- Details -->
+        <i 
+            class="icons github-details" 
+            [adaptivePosition]="false"
+            [tooltip]="'Detalhes do usuário'"
+            (click)="isShowDetails = true">
+        </i>
+        
+        <!-- Remover usuário -->
+        <i 
+            class="icons remove github-trash"
+            [adaptivePosition]="false"
+            [tooltip]="'Remover o usuário'"
+            (click)="_homeWebService.removeUser(user.login)">
+        </i>
+    </div>
+</div>
+
+<!-- Detalhes do usuário -->
+<user-details
+    *ngIf="isShowDetails"
+    [user]="user"
+    (close)="isShowDetails = false;">
+</user-details>

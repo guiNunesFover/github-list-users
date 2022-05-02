@@ -1,0 +1,18 @@
+<div 
+    class="container-button" 
+    [class.disabled]="disabled"  
+    [adaptivePosition]="false"
+    [tooltip]="tooltipMessage"
+    [style.margin-top]="marginTop + 'px'"
+    [style.margin-bottom]="marginBottom + 'px'"
+    [style.margin-right]="marginRight + 'px'"
+    [style.margin-left]="marginLeft + 'px'"
+    [style.width]="width + 'px'">
+    <button 
+        [ngClass]="[type]"
+        [disabled]="disabled"
+        [style.height]="height + 'px'"
+        (click)="clickEmit.emit()">
+        <ng-content></ng-content>
+    </button>
+</div>

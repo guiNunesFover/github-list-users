@@ -1,0 +1,57 @@
+<div class="container-body">
+    
+    <!-- Header -->
+    <div class="contaner-header-table">
+    
+        <!-- Filters -->
+        <div class="container-filters">
+    
+            <!-- player name -->
+            <github-input [width]="300">
+                <input 
+                    placeholder="Buscar pelo login..."
+                    [(ngModel)]="loginFieldSearch"
+                    (keydown.enter)="filterLogin()" />
+            </github-input>
+
+            <!-- Limpar filtro -->
+            <github-button-icon
+                *ngIf="userListTemp.length > 0"
+                [icon]="'github-trash'"
+                [tooltipMessage]="'Limpar filtro'"
+                marginLeft="8"
+                (clickEmit)="cleanFilter()">
+            </github-button-icon>
+        </div>
+
+        <!-- Novo usuário -->
+        <github-button
+            (clickEmit)="_homeWebService.isShowSearch = true">Novo usuário
+        </github-button>
+    </div>
+    
+    <!-- Collumns -->
+    <div class="container-collumns">
+        <div class="container-coll-header">Name</div>
+        <div class="container-coll-header">Login</div>
+        <div class="container-coll-header">Followers</div>
+        <div class="container-coll-header">Following</div>
+        <div class="container-coll-header">Location</div>
+        <div class="container-coll-header">Ações</div>
+    </div>
+    
+    <!-- Lista de items -->
+    <div *ngIf="!loading && _homeWebService.userCache" class="container-row-list">
+        <ng-container *ngFor="let user of _homeWebService.userCache">
+            <table-users-row
+                [user]="user">
+            </table-users-row>
+        </ng-container>
+    </div>
+    
+    <!-- Loading -->
+    <github-small-loading
+        *ngIf="loading"
+        [marginTop]="50">
+    </github-small-loading>
+</div>

@@ -1,0 +1,34 @@
+$transition: 0.3s ease-in-out;
+$border-radius-min: 3px;
+$border-radius: 7px;
+$border-radius-max: 20px;
+$margin-menu: 65px;
+$max-width: 1800px;
+$box-shadow: 0px 3px 6px #22222240;
+
+@mixin links 
+{
+    color: var(--page-font-100);
+    padding: 0 10px;
+    padding-bottom: 3px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: solid 1px transparent;
+    background-image: linear-gradient(var(--page-font-100), var(--page-font-100));
+    background-size: 30% 2px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: $transition;
+
+    &:hover, &.active
+    {
+        background-size: 100% 2px, auto;
+        background-image: linear-gradient(var(--page-font-100), var(--page-font-100));
+    }
+}
+
+.links
+{
+    @include links();
+}

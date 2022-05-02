@@ -1,0 +1,119 @@
+@import 'src/assets/styles/main.scss';
+
+@mixin btn-base() 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.container-button
+{
+    box-sizing: border-box;
+    outline: none;
+
+    i
+    {
+        font-size: 14px;
+        height: 14px;
+    }    
+    
+    &.disabled
+    {
+        cursor: not-allowed !important;
+    }
+}
+
+.primary
+{
+    @include btn-base();
+    background-color: var(--button-primary-background-100);
+    color: var(--button-primary-font-100);
+
+    &:hover
+    {
+        background-color: var(--button-primary-background-200);
+    }
+
+    &:focus
+    {
+        box-shadow: 0 0 0 3px var(--button-primary-focus-100);
+    }
+
+    &:disabled
+    {
+        background-color: var(--button-primary-focus-100) !important;
+    }
+}
+
+.secondary
+{
+    @include btn-base();
+    background-color: var(--button-secondary-background-100);
+    color: var(--button-secondary-font-100);
+
+    &:hover
+    {
+        background-color: var(--button-secondary-background-200);
+    }
+
+    &:focus
+    {
+        box-shadow: 0 0 0 3px var(--button-secondary-focus-100);
+    }
+
+    &:disabled
+    {
+        background-color: var(--button-secondary-focus-100) !important;
+    }
+}
+
+.danger
+{
+    @include btn-base();
+    background-color: var(--button-danger-background-100);
+    color: var(--button-danger-font-100);
+
+    &:hover
+    {
+        background-color: var(--button-danger-background-200);
+    }
+
+    &:focus
+    {
+        box-shadow: 0 0 0 3px var(--button-danger-focus-100);
+    }
+
+    &:disabled
+    {
+        background-color: var(--button-danger-focus-100) !important;
+    }
+}
+
+.warning
+{
+    @include btn-base();
+    background-color: var(--button-warning-background-100);
+    color: var(--button-warning-font-100);
+
+    &:hover
+    {
+        background-color: var(--button-warning-background-200);
+    }
+
+    &:focus
+    {
+        box-shadow: 0 0 0 3px var(--button-warning-focus-100);
+    }
+
+    &:disabled
+    {
+        background-color: var(--button-warning-focus-100) !important;
+    }
+}

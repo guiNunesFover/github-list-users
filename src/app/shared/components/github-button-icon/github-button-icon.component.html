@@ -1,0 +1,15 @@
+<div 
+    class="container-button" 
+    [class.disabled]="disabled"  
+    [adaptivePosition]="false"
+    [tooltip]="tooltipMessage"
+    [style.margin-top]="marginTop + 'px'"
+    [style.margin-bottom]="marginBottom + 'px'"
+    [style.margin-right]="marginRight + 'px'"
+    [style.margin-left]="marginLeft + 'px'">
+    
+    <!-- Icon -->
+    <div [ngClass]="[type]" (click)="clickEmit.emit()">
+        <i [ngClass]="icon"></i>
+    </div>
+</div>

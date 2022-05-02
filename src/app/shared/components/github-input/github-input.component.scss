@@ -1,0 +1,176 @@
+@import 'src/assets/styles/main.scss';
+
+::ng-deep
+{
+  // Placeholder
+  ::placeholder 
+  {
+    color: var(--input-placeholder-100);
+  }
+
+  :-ms-input-placeholder 
+  {
+    color: var(--input-placeholder-100);
+  }
+
+  ::-ms-input-placeholder 
+  {
+    color: var(--input-placeholder-100);
+  }
+  // Placeholder
+}
+
+.container-input
+{
+  position: relative;
+
+  @mixin inputDefault() 
+  {
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: $transition;
+    color: var(--input-font-100);
+    border: solid 1px var(--input-border-100);
+    background-color: var(--input-background-100);
+
+    &:focus
+    {
+      box-shadow: 0 0 0 3px var(--input-focus-100);
+    }
+  }
+  
+  &.with-icon-left
+  {
+    ::ng-deep
+    {
+      input
+      {
+        padding-left: 30px;
+      }
+    }  
+  }
+  
+  &.with-icon-right
+  {
+    ::ng-deep
+    {
+      input
+      {
+        padding-right: 30px;
+      }
+    }
+  }
+  
+  &.loading
+  {
+    ::ng-deep
+    {
+      input
+      {
+        padding-right: 40px;
+      }
+    }
+  }
+
+  &.error
+  {
+    ::ng-deep
+    {
+      input
+      {
+        border: solid 2px var(--input-error-100);
+        background-color: var(--input-error-background-100);
+      }
+
+      textarea
+      {
+        border: solid 2px var(--input-error-100);
+        background-color: var(--input-error-background-100);
+      }
+    }  
+  }
+  
+  &.success
+  {
+    ::ng-deep
+    {
+      input
+      {
+        border: solid 2px var(--input-success-100);
+        background-color: var(--input-success-background-100);
+      }
+    }  
+  }
+
+  ::ng-deep
+  {
+    input
+    {
+      @include inputDefault();
+      height: 40px;
+
+      &:disabled
+      {
+        background: var(--page-background-100);
+      }
+    }
+    
+    textarea
+    {
+      @include inputDefault();
+      height: 120px;
+      padding: 10px;
+      box-sizing: border-box;
+      resize: none;
+
+      &:disabled
+      {
+        background: var(--page-background-100);
+      }
+    }
+  }
+  
+  @mixin icon-default() 
+  {
+    position: absolute;
+    bottom: 8px;
+    color: var(--input-placeholder-100);
+    font-size: 14px;
+  }
+  
+  .icon-left
+  {
+    @include icon-default();
+    left: 10px;
+  }
+  
+  .icon-right
+  {
+    @include icon-default();
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .container-label
+  {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 4px;
+    
+    .input-label
+    {
+      color: var(--input-label-100);
+    }
+
+    .required-field
+    {
+      color: var(--input-required-100);
+      margin-left: 6px;
+    }
+  }
+}

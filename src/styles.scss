@@ -1,0 +1,44 @@
+@import 'src/assets/icons/icons-font/icons';
+
+body, p, h1, h2, h3, h4, h5, h6, img, div, section, input, textarea, button
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body
+{
+    background-color: var(--page-background-100);
+    color: var(--page-font-100);
+    font-family: 'Prompt ExtraLight';
+    font-size: 12px;
+}
+
+// SCROLL
+::-webkit-scrollbar 
+{
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track-piece 
+{
+    background-color: var(--page-border-100);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:vertical 
+{
+    height: 0px;
+    color: var(--page-font-100);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:horizontal 
+{
+    width: 0px;
+    border-radius: 50px;
+}
+// SCROLL

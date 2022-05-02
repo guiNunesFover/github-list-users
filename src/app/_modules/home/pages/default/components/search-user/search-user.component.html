@@ -1,0 +1,49 @@
+<div focus-first class="container-search-illustration">
+            
+    <!-- Image -->
+    <img 
+        src="assets/images/search_illustration.svg" 
+        alt="Buscador imagem"
+        title="Buscador imagem" />
+
+    <!-- Title -->
+    <h3 class="title">Digite o login que você deseja pesquisar e aperte 'enter' ou clique em 'Buscar'</h3>
+
+    <!-- Input search -->
+    <github-input 
+        [width]="480" 
+        [marginTop]="21">
+        <input 
+            placeholder="Digite o login que deseja encontrar..."
+            [formControl]="inputSearch"
+            (keydown.enter)="search()" />
+    </github-input>
+
+    <!-- Loading -->
+    <github-small-loading
+        *ngIf="loading"
+        [marginTop]="12">
+    </github-small-loading>
+
+    <div class="group-buttons" [class.only-button]="_homeWebService.userCache.length <= 0">
+
+        <!-- Cancel search -->
+        <github-button
+            *ngIf="_homeWebService.userCache.length > 0"
+            [type]="'secondary'"
+            (clickEmit)="_homeWebService.isShowSearch = false;">Voltar
+        </github-button>
+
+        <!-- Button search -->
+        <github-button
+            (clickEmit)="search()">Buscar
+        </github-button>
+    </div>
+</div>
+
+<!-- Detalhes do usuário -->
+<user-details
+    *ngIf="user"
+    [user]="user"
+    (close)="_homeWebService.isShowSearch = false;">
+</user-details>

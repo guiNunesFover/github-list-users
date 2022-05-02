@@ -1,0 +1,68 @@
+@import 'src/assets/styles/main.scss';
+
+.container-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 21px;
+
+    .container-image-user
+    {
+        width: 100px;
+        height: 100px;
+        border-radius: $border-radius-max;
+        box-shadow: $box-shadow;
+    }
+
+    .login
+    {
+        margin-top: 12px;
+        font-size: 21px;
+    }
+
+    .container-link-access
+    {
+        text-decoration: none;
+        margin-top: 6px;
+        cursor: pointer;
+        padding: 12px;
+        border-radius: $border-radius;
+        color: var(--page-font-100);
+        border: solid 1px var(--cards-border-100);
+        background-color: var(--page-background-100);
+    }
+}
+
+.container-infos
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+    margin-top: 21px;
+}
+
+.container-list-stars
+{
+    .label
+    {
+        margin-top: 12px;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 4px;
+        font-size: 12px;
+        color: var(--page-font-100);
+    }
+
+    .container-list
+    {
+        padding: 12px;
+        border-radius: $border-radius;
+        max-height: 108px;
+        overflow: auto;
+        color: var(--page-font-100);
+        border: solid 1px var(--cards-border-100);
+        background-color: var(--page-background-100);
+    }
+}

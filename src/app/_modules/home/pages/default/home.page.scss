@@ -1,0 +1,31 @@
+@import 'src/assets/styles/main.scss';
+
+.container-page
+{
+    margin-top: 50px;
+    padding: 16px 30px;
+    box-sizing: border-box;
+
+    .container-header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .title
+        {
+            font-size: 21px;
+            color: var(--page-font-100);
+        }   
+    }
+
+    .container-body
+    {
+        height: calc(100vh - 126px);
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        transition: $transition;
+        background-color: var(--cards-background-100);
+    }
+}

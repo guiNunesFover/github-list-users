@@ -1,0 +1,96 @@
+<github-background-modal
+    [title]="'Detalhes do usuário'"
+    [width]="500"
+    (close)="close.emit();">
+
+    <!-- Header -->
+    <div class="container-header">
+
+        <!-- Image user -->
+        <img 
+            class="container-image-user"
+            [src]="user.avatar_url" 
+            [alt]="user?.login" 
+            [title]="user?.login" />
+
+        <!-- Login user -->
+        <h3 class="login">{{ user.login }}</h3>
+
+        <!-- Link de acesso -->
+        <a 
+            target="_blank"
+            class="container-link-access"
+            [href]="user.html_url" >{{ user.html_url }}
+        </a>
+    </div>
+
+    <!-- Infos -->
+    <div class="container-infos">
+
+        <!-- Name -->
+        <github-input [label]="'Name'">
+            <input 
+                disabled 
+                [value]="user?.name || '-'" />
+        </github-input>
+        
+        <!-- Login -->
+        <github-input [label]="'Login'">
+            <input 
+                disabled 
+                [value]="user?.login || '-'" />
+        </github-input>
+        
+        <!-- Followers -->
+        <github-input [label]="'Followers'">
+            <input 
+                disabled 
+                [value]="user?.followers || '0'" />
+        </github-input>
+        
+        <!-- Followers -->
+        <github-input [label]="'Followers'">
+            <input 
+                disabled 
+                [value]="user.followers || '0'" />
+        </github-input>
+
+        <!-- Location -->
+        <github-input [label]="'Location'">
+            <input 
+                disabled 
+                [value]="user?.location || '-'" />
+        </github-input>
+        
+    </div>
+    <!-- Description -->
+    <github-input [label]="'Description'" [marginTop]="12">
+        <textarea 
+            disabled 
+            [value]="user?.bio || '-'">
+        </textarea>
+    </github-input>
+
+    <!-- Lista dos stars -->
+    <div class="container-list-stars">
+
+        <!-- Loading -->
+        <github-small-loading
+            *ngIf="loading"
+            [marginTop]="12">
+        </github-small-loading>
+
+        <ng-container *ngIf="!loading && listStars.length > 0">
+
+            <!-- Label -->
+            <div class="label">List stars</div>
+    
+            <!-- List -->
+            <div class="container-list">
+                <ng-container *ngFor="let item of listStars">
+                    <p>{{ item?.name }}</p>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</github-background-modal>

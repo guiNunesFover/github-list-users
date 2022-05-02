@@ -1,0 +1,8 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.codeLens": true,
+    "diffEditor.codeLens": true,
+    "typescript.referencesCodeLens.enabled": true,
+}

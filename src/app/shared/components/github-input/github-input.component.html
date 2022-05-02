@@ -1,0 +1,45 @@
+<div 
+  class="container-input" 
+  [style.margin-top]="marginTop + 'px'"
+  [style.margin-bottom]="marginBottom + 'px'"
+  [style.margin-right]="marginRight + 'px'"
+  [style.margin-left]="marginLeft + 'px'"
+  [style.width]="width + 'px'"
+  [class.with-icon-left]="iconLeft"
+  [class.with-icon-right]="iconRight"
+  [class.loading]="loading"
+  [class.error]="error"
+  [class.success]="success">
+  
+  <!-- Container label -->
+  <div *ngIf="label" class="container-label">
+    <div class="input-label" [innerHTML]="label"></div>
+    <span *ngIf="required" class="required-field"> - Obrigatório</span>
+  </div>
+
+  <!-- Icone left -->
+  <i 
+    *ngIf="iconLeft" 
+    class="icon-left" 
+    [ngClass]="iconLeft">
+  </i>
+  
+  <!-- Icone right -->
+  <i 
+    *ngIf="!loading && iconRight" 
+    class="icon-right" 
+    [ngClass]="iconRight" 
+    (click)="iconRightClick.emit()">
+  </i>
+
+  <!-- Loading -->
+  <github-small-loading
+    *ngIf="loading"
+    [positionAbsolute]="true"
+    [right]="3"
+    [bottom]="0">
+  </github-small-loading>
+  
+  <!-- Input -->
+  <ng-content></ng-content>
+</div>

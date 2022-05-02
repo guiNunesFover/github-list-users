@@ -1,0 +1,46 @@
+@import 'src/assets/styles/main.scss';
+
+.container-menu-top
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 30px;
+    box-sizing: border-box;
+    box-shadow: $box-shadow;
+    transition: $transition;
+    color: var(--menu-top-font-200);
+    background-color: var(--menu-top-background-100);
+
+    .container-logo
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: default;
+
+        img
+        {
+            width: 18px;
+        }
+
+        .title
+        {
+            margin-left: 8px;
+            font-size: 16px;
+        }
+    }
+
+    .container-options
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
