@@ -25,9 +25,11 @@ Já para a instalação do `Angular CLI` é necessário ter o `NPM`, que já é 
 
 Para rodar o projeto, basta rodar o comando `npm start` ou `ng serve`. Logo após o término do build, navegue no link `http://localhost:4200/` para ver o projeto no navegador.
 
-## Rodando os testes
+## Testes
 
-Para rodar os testes, basta rodar o comando `npm test` ou `ng test`. Logo após o término do build, será aberto automaticamente um navegador na rota `http://localhost:9876/` para ver os resultados dos testes. Além disso, os resultados também serão apresentados no prompt de comando.
+- Jasmine: Para rodar os testes unitários com jasmine, basta rodar o comando `npm test` ou `ng test`. Logo após o término do build, será aberto automaticamente um navegador na rota `http://localhost:9876/` para ver os resultados dos testes. Além disso, os resultados também serão apresentados no prompt de comando.
+
+- Cypress: Para rodar os testes E2E com cypress, é necessário que o projeto esteja rodando em paralelo, então, antes de rodar o comando do cypress, inicio o projeto. Logo após iniciar o projeto, basta rodar o comando `npm cypress`. Logo após o término do build, será aberto automaticamente um navegador na rota `http://localhost:4200/__/#/tests/__all` com todos os arquivos de testes. Depois basta clicar no arquivo que deseja testar que o cypress irá iniciar os testes automaticamente e te trará os resultados.
 
 
 ## Observações 
