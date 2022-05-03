@@ -1,4 +1,4 @@
-<div class="container-body">
+<div data-testid="table-users-id" class="container-body">
     
     <!-- Header -->
     <div class="contaner-header-table">
@@ -42,8 +42,9 @@
     
     <!-- Lista de items -->
     <div *ngIf="!loading && _homeWebService.userCache" class="container-row-list">
-        <ng-container *ngFor="let user of _homeWebService.userCache">
+        <ng-container *ngFor="let user of _homeWebService.userCache; let index = index;">
             <table-users-row
+                [index]="index"
                 [user]="user">
             </table-users-row>
         </ng-container>

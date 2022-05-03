@@ -31,7 +31,7 @@ export class HomeWebService
         // Remove o usuário encontrado da lista
         const indexOf = this.userCache.indexOf(exist);
         this.userCache.splice(indexOf, 1);
-        this._githubNotificationService.success(['Usuário removido com sucesso']);
+        this._githubNotificationService.success(['Usuário removido com sucesso.']);
 
         // Verifica se a lista está vazia, e envia para a tela de busca
         if (this.userCache.length <= 0) this.isShowSearch = true;

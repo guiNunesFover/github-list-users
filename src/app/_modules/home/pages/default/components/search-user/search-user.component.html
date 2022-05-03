@@ -1,4 +1,4 @@
-<div focus-first class="container-search-illustration">
+<div data-testid="search-user-id" focus-first class="container-search-illustration">
             
     <!-- Image -->
     <img 
@@ -11,6 +11,7 @@
 
     <!-- Input search -->
     <github-input 
+        [id]="1"
         [width]="480" 
         [marginTop]="21">
         <input 
@@ -30,12 +31,14 @@
         <!-- Cancel search -->
         <github-button
             *ngIf="_homeWebService.userCache.length > 0"
+            [id]="2"
             [type]="'secondary'"
             (clickEmit)="_homeWebService.isShowSearch = false;">Voltar
         </github-button>
 
         <!-- Button search -->
         <github-button
+            [id]="1"
             (clickEmit)="search()">Buscar
         </github-button>
     </div>

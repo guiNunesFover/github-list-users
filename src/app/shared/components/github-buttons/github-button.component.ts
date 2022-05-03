@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { GithubButtonTypeEnum } from './github-button-type.enum';
 
 @Component({
@@ -7,8 +7,9 @@ import { GithubButtonTypeEnum } from './github-button-type.enum';
     styleUrls: ['./github-button.component.scss']
 })
 
-export class GithubButtonComponent
+export class GithubButtonComponent implements OnInit
 {
+    @Input() id: number = 0;
     @Input() type: GithubButtonTypeEnum | string = GithubButtonTypeEnum.primary;
     @Input() disabled: boolean;
     @Input() tooltipMessage: string;
@@ -23,4 +24,15 @@ export class GithubButtonComponent
     @Input() borderRadius: number;
     @Input() borderColor: number;
     @Output() clickEmit = new EventEmitter();
+    @ViewChild('button', { static: false }) button: ElementRef;
+
+    ngOnInit(): void 
+    {
+        this.setTestId();
+    }
+
+    private setTestId(): void
+    {
+        setTimeout(() => this.button.nativeElement.setAttribute('data-testid',`button-id-${this.id}`), 10);
+    }
 }

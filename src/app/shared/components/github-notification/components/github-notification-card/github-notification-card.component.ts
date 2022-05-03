@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { GithubNotificationModel } from '../../model/github-notification.model';
@@ -27,6 +27,8 @@ export class GithubNotificationCardComponent implements OnInit, OnDestroy
     @Input() item: GithubNotificationModel;
     @Input() durationSecond: number;
     @Output() close = new EventEmitter<GithubNotificationModel>();
+    @ViewChild('card', { static: false }) card: ElementRef;
+    @ViewChild('message', { static: false }) message: ElementRef;
     public currentTime: number = 0;
     public barLineStype: { width?: string } = { width: '0%' }; // Realiza o design da progress bar
     private stop: boolean;
@@ -34,6 +36,9 @@ export class GithubNotificationCardComponent implements OnInit, OnDestroy
 
     ngOnInit(): void 
     {
+        setTimeout(() => this.card.nativeElement.setAttribute('data-testid',`card-notification`), 10);
+        setTimeout(() => this.message.nativeElement.setAttribute('data-testid',`card-notification-message`), 10);
+        
         this.subscription.add(timer(0, 10)
         .pipe(
             tap(() => {
