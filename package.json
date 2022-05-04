@@ -6,7 +6,9 @@
     "build": "ng build",
     "buildIcons": "fantasticon src/assets/icons -o src/assets/icons/icons-font -p github --normalize true",
     "test": "ng test",
-    "cypress": "$(npm bin)/cypress open"
+    "cypress:open": "$(npm bin)/cypress open",
+    "cypress:run": "$(npm bin)/cypress run",
+    "cypress": "$(npm bin)/cypress"
   },
   "private": true,
   "dependencies": {

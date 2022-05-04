@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { UserModel } from "src/app/domain/entitys/user.model";
 import { GithubNotificationService } from "src/app/shared/components/github-notification/services/github-notification.service";
+import { OrderByModel } from "src/app/shared/models/order-by.model";
+import { TableUsersOrderEnum } from "../pages/default/components/table-users/enums/table-users-order.enum";
 
 @Injectable({
     providedIn: 'root'
@@ -9,6 +11,7 @@ export class HomeWebService
 {
     public isShowSearch: boolean;
     public userCache: UserModel[] = [];
+    public orderBy = new OrderByModel(TableUsersOrderEnum.name, true);
 
     constructor(private _githubNotificationService: GithubNotificationService) {}
 
@@ -43,5 +46,40 @@ export class HomeWebService
         if (!exist) return null;
 
         return exist;
+    }
+
+    public orderListBy(_typeBy: TableUsersOrderEnum | string): void
+    {
+        if (!_typeBy)
+        {
+            this._githubNotificationService.warning(['É necessário informar o tipo de ordenação da tabela.']);
+            return;
+        }
+        
+        // Verificando se é o mesmo item de ordenação, caso seja, mudar a direção de ordenação,
+        // Caso não seja o mesmo, setar o nome objeto de ordenação
+        if (this.orderBy.name == _typeBy) this.orderBy.direction = !this.orderBy.direction;
+        else 
+        {
+            this.orderBy.name = _typeBy;
+            this.orderBy.direction = true;
+        }
+
+        // Realizando a ordenação
+        this.userCache = this.userCache.sort((a, b) => 
+        {
+            if (this.orderBy.direction)
+            {
+                if (a[this.orderBy.name] > b[this.orderBy.name]) return 1;
+                if (a[this.orderBy.name] < b[this.orderBy.name]) return -1;
+            }
+            else
+            {
+                if (a[this.orderBy.name] < b[this.orderBy.name]) return 1;
+                if (a[this.orderBy.name] > b[this.orderBy.name]) return -1;
+            }
+
+            return 0;
+        });
     }
 }

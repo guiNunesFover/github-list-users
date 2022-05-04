@@ -1,4 +1,5 @@
 export type IconsId =
+  | "arrow-right"
   | "check"
   | "close"
   | "danger"
@@ -8,6 +9,7 @@ export type IconsId =
   | "trash";
 
 export type IconsKey =
+  | "ArrowRight"
   | "Check"
   | "Close"
   | "Danger"
@@ -17,6 +19,7 @@ export type IconsKey =
   | "Trash";
 
 export enum Icons {
+  ArrowRight = "arrow-right",
   Check = "check",
   Close = "close",
   Danger = "danger",
@@ -27,11 +30,12 @@ export enum Icons {
 }
 
 export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
-  [Icons.Check]: "61697",
-  [Icons.Close]: "61698",
-  [Icons.Danger]: "61699",
-  [Icons.Details]: "61700",
-  [Icons.Info]: "61701",
-  [Icons.Refresh]: "61702",
-  [Icons.Trash]: "61703",
+  [Icons.ArrowRight]: "61697",
+  [Icons.Check]: "61698",
+  [Icons.Close]: "61699",
+  [Icons.Danger]: "61700",
+  [Icons.Details]: "61701",
+  [Icons.Info]: "61702",
+  [Icons.Refresh]: "61703",
+  [Icons.Trash]: "61704",
 };

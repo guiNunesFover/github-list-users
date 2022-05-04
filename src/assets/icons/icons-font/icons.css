@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?03691272ff2c9a8eb7ad0dbe327e8974#iefix") format("embedded-opentype"),
-url("./icons.woff2?03691272ff2c9a8eb7ad0dbe327e8974") format("woff2"),
-url("./icons.woff?03691272ff2c9a8eb7ad0dbe327e8974") format("woff");
+    src: url("./icons.eot?6c19e234179a7aaac3ef289ce8d07966#iefix") format("embedded-opentype"),
+url("./icons.woff2?6c19e234179a7aaac3ef289ce8d07966") format("woff2"),
+url("./icons.woff?6c19e234179a7aaac3ef289ce8d07966") format("woff");
 }
 
 i[class^="github-"]:before, i[class*=" github-"]:before {
@@ -16,24 +16,27 @@ i[class^="github-"]:before, i[class*=" github-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.github-check:before {
+.github-arrow-right:before {
     content: "\f101";
 }
-.github-close:before {
+.github-check:before {
     content: "\f102";
 }
-.github-danger:before {
+.github-close:before {
     content: "\f103";
 }
-.github-details:before {
+.github-danger:before {
     content: "\f104";
 }
-.github-info:before {
+.github-details:before {
     content: "\f105";
 }
-.github-refresh:before {
+.github-info:before {
     content: "\f106";
 }
-.github-trash:before {
+.github-refresh:before {
     content: "\f107";
+}
+.github-trash:before {
+    content: "\f108";
 }

@@ -32,11 +32,51 @@
     
     <!-- Collumns -->
     <div class="container-collumns">
-        <div class="container-coll-header">Name</div>
-        <div class="container-coll-header">Login</div>
-        <div class="container-coll-header">Followers</div>
-        <div class="container-coll-header">Following</div>
-        <div class="container-coll-header">Location</div>
+        <div 
+            class="container-coll-header order" 
+            [tooltip]="'Clique para ordenar pelo nome'"
+            (click)="_homeWebService.orderListBy('name')">
+            <p>Nome</p>
+            <i 
+                class="github-arrow-right" 
+                [class.order-active-up]="_homeWebService.orderBy.name == 'name' && _homeWebService.orderBy.direction"
+                [class.order-active-down]="_homeWebService.orderBy.name == 'name' && !_homeWebService.orderBy.direction">
+            </i>
+        </div>
+        <div 
+            class="container-coll-header order" 
+            [tooltip]="'Clique para ordenar pelo login'"
+            (click)="_homeWebService.orderListBy('login')">
+             <p>Login</p>
+             <i 
+                class="github-arrow-right" 
+                [class.order-active-up]="_homeWebService.orderBy.name == 'login' && _homeWebService.orderBy.direction"
+                [class.order-active-down]="_homeWebService.orderBy.name == 'login' && !_homeWebService.orderBy.direction">
+            </i>
+        </div>
+        <div 
+            class="container-coll-header order" 
+            [tooltip]="'Clique para ordenar pelo número de Followers'"
+            (click)="_homeWebService.orderListBy('followers')">
+             <p>Followers</p>
+            <i 
+                class="github-arrow-right" 
+                [class.order-active-up]="_homeWebService.orderBy.name == 'followers' && _homeWebService.orderBy.direction"
+                [class.order-active-down]="_homeWebService.orderBy.name == 'followers' && !_homeWebService.orderBy.direction">
+            </i>
+        </div>
+        <div 
+            class="container-coll-header order" 
+            [tooltip]="'Clique para ordenar pelo número de Following'"
+            (click)="_homeWebService.orderListBy('following')">
+            <p>Following</p>
+            <i 
+                class="github-arrow-right" 
+                [class.order-active-up]="_homeWebService.orderBy.name == 'following' && _homeWebService.orderBy.direction"
+                [class.order-active-down]="_homeWebService.orderBy.name == 'following' && !_homeWebService.orderBy.direction">
+            </i>
+        </div>
+        <div class="container-coll-header">Localização</div>
         <div class="container-coll-header">Ações</div>
     </div>
     

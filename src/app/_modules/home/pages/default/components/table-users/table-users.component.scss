@@ -26,11 +26,13 @@
         align-items: center;
         background-color: var(--table-header-background-100);
         height: 40px;
-
+        
         .container-coll-header
         {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            height: 40px;
             padding: 0px 15px;
             box-sizing: border-box;
             flex-shrink: 0;
@@ -40,6 +42,18 @@
             &.order
             {
                 cursor: pointer;
+            }
+
+            .order-active-up
+            {
+                transition: $transition;
+                transform: rotate(90deg);
+            }
+            
+            .order-active-down
+            {
+                transition: $transition;
+                transform: rotate(-90deg);
             }
         }
     }

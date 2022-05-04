@@ -29,6 +29,6 @@ export class GithubInputComponent implements OnInit
         {
             const input = this.containerInput.nativeElement.getElementsByTagName('input')[0];
             input.setAttribute('data-testid',`input-id-${this.id}`);
-        }, 10);
+        }, 100);
     }
 }
