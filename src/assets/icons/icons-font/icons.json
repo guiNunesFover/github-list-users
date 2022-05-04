@@ -4,7 +4,8 @@
     "close": 61699,
     "danger": 61700,
     "details": 61701,
-    "info": 61702,
-    "refresh": 61703,
-    "trash": 61704
+    "folder-open": 61702,
+    "info": 61703,
+    "refresh": 61704,
+    "trash": 61705
 }

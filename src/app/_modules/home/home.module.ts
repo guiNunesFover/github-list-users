@@ -10,6 +10,8 @@ import { GithubNotFoundModule } from 'src/app/shared/components/github-not-found
 import { GithubSmallLoadingModule } from 'src/app/shared/components/github-small-loading/github-small-loading.module';
 import { FormFocusDirective } from 'src/app/shared/directives/form-focus.directive';
 import { HomeRouting } from './home.routing';
+import { ModalRepositoryRowComponent } from './pages/default/components/modal-repository-row/modal-repository-row.component';
+import { ModalRepositoryComponent } from './pages/default/components/modal-repository/modal-repository.component';
 import { SearchUserComponent } from './pages/default/components/search-user/search-user.component';
 import { TableUsersRowComponent } from './pages/default/components/table-users-row/table-users-row.component';
 import { TableUsersComponent } from './pages/default/components/table-users/table-users.component';
@@ -24,6 +26,8 @@ import { HomePage } from './pages/default/home.page';
         SearchUserComponent,
         TableUsersComponent,
         TableUsersRowComponent,
+        ModalRepositoryComponent,
+        ModalRepositoryRowComponent,
     ],
     imports: [
         CommonModule,

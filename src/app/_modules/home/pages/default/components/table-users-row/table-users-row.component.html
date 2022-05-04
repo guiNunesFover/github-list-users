@@ -6,6 +6,15 @@
     <div class="container-item">{{ user.location || '-' }}</div>
     <div class="container-item actions">
         
+        <!-- Repositorios -->
+        <i 
+            #rowItemDetailsButton
+            class="icons github-folder-open" 
+            [adaptivePosition]="false"
+            [tooltip]="'Listagem dos repositórios'"
+            (click)="isShowRepositoryModal = true">
+        </i>
+        
         <!-- Details -->
         <i 
             #rowItemDetailsButton
@@ -32,3 +41,10 @@
     [user]="user"
     (close)="isShowDetails = false;">
 </user-details>
+
+<!-- Lista dos repositórios -->
+<modal-repository
+    *ngIf="isShowRepositoryModal"
+    [user]="user"
+    (close)="isShowRepositoryModal = false;">
+</modal-repository>

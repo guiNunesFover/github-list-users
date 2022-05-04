@@ -23,4 +23,9 @@ export class GithubService
     {
         return this._http.get<StartModel[]>(`${environment.apiGithub}/${this.prefix}/${_login}/starred`);
     }
+
+    public getRepositories(_login: string): Observable<any>
+    {
+        return this._http.get<StartModel[]>(`${environment.apiGithub}/${this.prefix}/${_login}/repos`);
+    }
 }

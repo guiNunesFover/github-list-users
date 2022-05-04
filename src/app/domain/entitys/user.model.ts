@@ -1,3 +1,5 @@
+import { RepositoryModel } from "./repository.model";
+
 export class UserModel
 {
     id?: number;
@@ -32,4 +34,5 @@ export class UserModel
     type?: string;
     updated_at?: string;
     url?: string;
+    repos?: RepositoryModel[];
 }

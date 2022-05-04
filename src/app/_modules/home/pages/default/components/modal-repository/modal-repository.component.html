@@ -1,0 +1,49 @@
+<github-background-modal
+    [title]="'Listagem de repositórios'"
+    [width]="600"
+    (close)="close.emit()">
+
+    <div class="container-body">
+    
+        <!-- Collumns -->
+        <div class="container-collumns">
+            <div 
+                class="container-coll-header order" 
+                [tooltip]="'Clique para ordenar pelo nome'"
+                (click)="orderByRepoList('name')">
+                <p>Nome</p>
+                <i 
+                    class="github-arrow-right" 
+                    [class.order-active-up]="_homeWebService.orderBy.name == 'name' && _homeWebService.orderBy.direction"
+                    [class.order-active-down]="_homeWebService.orderBy.name == 'name' && !_homeWebService.orderBy.direction">
+                </i>
+            </div>
+            <div 
+                class="container-coll-header order" 
+                [tooltip]="'Clique para ordenar pela quantidade de estrelas'"
+                (click)="orderByRepoList('stargazers_count')">
+                 <p>Estrelas</p>
+                 <i 
+                    class="github-arrow-right" 
+                    [class.order-active-up]="_homeWebService.orderBy.name == 'stargazers_count' && _homeWebService.orderBy.direction"
+                    [class.order-active-down]="_homeWebService.orderBy.name == 'stargazers_count' && !_homeWebService.orderBy.direction">
+                </i>
+            </div>
+        </div>
+        
+        <!-- Lista de items -->
+        <div *ngIf="!loading && user.repos" class="container-row-list">
+            <ng-container *ngFor="let repo of user.repos; let index = index;">
+                <modal-repository-row
+                    [repo]="repo">
+                </modal-repository-row>
+            </ng-container>
+        </div>
+        
+        <!-- Loading -->
+        <github-small-loading
+            *ngIf="loading"
+            [marginTop]="50">
+        </github-small-loading>
+    </div>
+</github-background-modal>

@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { UserModel } from "src/app/domain/entitys/user.model";
 import { GithubNotificationService } from "src/app/shared/components/github-notification/services/github-notification.service";
+import { FunctionsHelp } from "src/app/shared/helpers/functions.help";
 import { OrderByModel } from "src/app/shared/models/order-by.model";
 import { TableUsersOrderEnum } from "../pages/default/components/table-users/enums/table-users-order.enum";
 
@@ -13,7 +14,10 @@ export class HomeWebService
     public userCache: UserModel[] = [];
     public orderBy = new OrderByModel(TableUsersOrderEnum.name, true);
 
-    constructor(private _githubNotificationService: GithubNotificationService) {}
+    constructor(
+        private _githubNotificationService: GithubNotificationService,
+        private _functionsHelp: FunctionsHelp,
+    ) {}
 
     public addUser(_user: UserModel): UserModel
     {
@@ -66,20 +70,6 @@ export class HomeWebService
         }
 
         // Realizando a ordenação
-        this.userCache = this.userCache.sort((a, b) => 
-        {
-            if (this.orderBy.direction)
-            {
-                if (a[this.orderBy.name] > b[this.orderBy.name]) return 1;
-                if (a[this.orderBy.name] < b[this.orderBy.name]) return -1;
-            }
-            else
-            {
-                if (a[this.orderBy.name] < b[this.orderBy.name]) return 1;
-                if (a[this.orderBy.name] > b[this.orderBy.name]) return -1;
-            }
-
-            return 0;
-        });
+        this.userCache = this._functionsHelp.orderBy(this.userCache, this.orderBy);
     }
 }

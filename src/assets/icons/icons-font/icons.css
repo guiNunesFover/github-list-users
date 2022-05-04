@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?6c19e234179a7aaac3ef289ce8d07966#iefix") format("embedded-opentype"),
-url("./icons.woff2?6c19e234179a7aaac3ef289ce8d07966") format("woff2"),
-url("./icons.woff?6c19e234179a7aaac3ef289ce8d07966") format("woff");
+    src: url("./icons.eot?c744fb7c9f123f5ad9f0c87731560745#iefix") format("embedded-opentype"),
+url("./icons.woff2?c744fb7c9f123f5ad9f0c87731560745") format("woff2"),
+url("./icons.woff?c744fb7c9f123f5ad9f0c87731560745") format("woff");
 }
 
 i[class^="github-"]:before, i[class*=" github-"]:before {
@@ -31,12 +31,15 @@ i[class^="github-"]:before, i[class*=" github-"]:before {
 .github-details:before {
     content: "\f105";
 }
-.github-info:before {
+.github-folder-open:before {
     content: "\f106";
 }
-.github-refresh:before {
+.github-info:before {
     content: "\f107";
 }
-.github-trash:before {
+.github-refresh:before {
     content: "\f108";
+}
+.github-trash:before {
+    content: "\f109";
 }

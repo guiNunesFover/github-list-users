@@ -28,7 +28,7 @@
     <div class="container-infos">
 
         <!-- Name -->
-        <github-input [label]="'Name'">
+        <github-input [label]="'Nome'">
             <input 
                 disabled 
                 [value]="user?.name || '-'" />
@@ -56,15 +56,16 @@
         </github-input>
 
         <!-- Location -->
-        <github-input [label]="'Location'">
+        <github-input [label]="'Localização'">
             <input 
                 disabled 
                 [value]="user?.location || '-'" />
         </github-input>
         
     </div>
+
     <!-- Description -->
-    <github-input [label]="'Description'" [marginTop]="12">
+    <github-input [label]="'Descrição'" [marginTop]="12">
         <textarea 
             disabled 
             [value]="user?.bio || '-'">
@@ -83,7 +84,7 @@
         <ng-container *ngIf="!loading && listStars.length > 0">
 
             <!-- Label -->
-            <div class="label">List stars</div>
+            <div class="label">Listas dos favoritos</div>
     
             <!-- List -->
             <div class="container-list">

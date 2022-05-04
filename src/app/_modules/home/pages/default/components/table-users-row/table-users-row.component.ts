@@ -14,6 +14,7 @@ export class TableUsersRowComponent implements OnInit
     @ViewChild('rowItemDetailsButton', { static: false }) rowItemDetailsButton: ElementRef;
     @ViewChild('rowItemRemoveButton', { static: false }) rowItemRemoveButton: ElementRef;
     public isShowDetails: boolean;
+    public isShowRepositoryModal: boolean;
 
     constructor(public _homeWebService: HomeWebService) {}
     ngOnInit(): void 

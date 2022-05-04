@@ -1,0 +1,21 @@
+@import 'src/assets/styles/main.scss';
+
+.container-row
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+    align-items: center;
+    height: 40px;
+    border-bottom: solid 1px var(--cards-border-100);
+    background-color: var(--cards-background-100);
+
+    .container-item
+    {
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+}
