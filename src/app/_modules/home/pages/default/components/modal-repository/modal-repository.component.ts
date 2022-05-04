@@ -26,7 +26,7 @@ export class ModalRepositoryComponent implements OnInit
 
     ngOnInit(): void 
     {
-        this.getListRepos();
+        if (!this.user.repos || this.user.repos.length <= 0) this.getListRepos();
     }
 
     private getListRepos(): void
