@@ -1,4 +1,5 @@
 import { RepositoryModel } from "./repository.model";
+import { StartModel } from "./start.model";
 
 export class UserModel
 {
@@ -35,4 +36,5 @@ export class UserModel
     updated_at?: string;
     url?: string;
     repos?: RepositoryModel[];
+    stars?: StartModel[];
 }

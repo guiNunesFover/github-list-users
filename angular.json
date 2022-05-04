@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "itau-test-github": {
+    "test-github": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/itau-test-github",
+            "outputPath": "dist/test-github",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "itau-test-github:build:production"
+              "browserTarget": "test-github:build:production"
             },
             "development": {
-              "browserTarget": "itau-test-github:build:development"
+              "browserTarget": "test-github:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "itau-test-github:build"
+            "browserTarget": "test-github:build"
           }
         },
         "test": {
@@ -108,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "itau-test-github"
+  "defaultProject": "test-github"
 }

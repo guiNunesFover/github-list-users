@@ -29,6 +29,13 @@ export class UserDetailsComponent implements OnInit
 
     private getStars(): void
     {
+        // Verifica se o usuário já tem o obj stars
+        if (this.user.stars)
+        {
+            this.listStars = this.user.stars;
+            return;
+        }
+
         // Verifica se o campo é válido e caso não seja, informa ao usuário
         if (!this.user.login)
         {
@@ -44,7 +51,7 @@ export class UserDetailsComponent implements OnInit
         ).subscribe(resp =>
         {
             this.loading = false;
-            this.listStars = resp;
+            this.user.stars = this.listStars = resp;
         },
         error =>
         {

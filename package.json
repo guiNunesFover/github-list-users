@@ -1,5 +1,5 @@
 {
-  "name": "itau-test-github",
+  "name": "test-github",
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
