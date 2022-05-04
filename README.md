@@ -29,7 +29,9 @@ Para rodar o projeto, basta rodar o comando `npm start` ou `ng serve`. Logo apó
 
 - Jasmine: Para rodar os testes unitários com jasmine, basta rodar o comando `npm test` ou `ng test`. Logo após o término do build, será aberto automaticamente um navegador na rota `http://localhost:9876/` para ver os resultados dos testes. Além disso, os resultados também serão apresentados no prompt de comando.
 
-- Cypress: Para rodar os testes E2E com cypress, é necessário que o projeto esteja rodando em paralelo, então, antes de rodar o comando do cypress, inicio o projeto. Logo após iniciar o projeto, basta rodar o comando `npm cypress`. Logo após o término do build, será aberto automaticamente um navegador na rota `http://localhost:4200/__/#/tests/__all` com todos os arquivos de testes. Depois basta clicar no arquivo que deseja testar que o cypress irá iniciar os testes automaticamente e te trará os resultados.
+- Cypress: Para rodar os testes E2E com cypress, é necessário que o projeto esteja rodando em paralelo, então, antes de rodar o comando do cypress, inicio o projeto. Logo após iniciar o projeto, basta rodar o comando `npm cypress:open` ou `npm cypress:run`. 
+- - Comando `run`: Esse comando vai executar os testes em background e irá exibir o resultado no prompt de comando.
+- - Comando `open`: Será aberto automaticamente um navegador na rota `http://localhost:4200/__/#/tests/__all` com todos os arquivos de testes. Depois basta clicar no arquivo que deseja testar que o cypress irá iniciar os testes automaticamente e te trará os resultados.
 
 ## Observações 
 
